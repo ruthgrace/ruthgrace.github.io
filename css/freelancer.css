@@ -176,6 +176,8 @@ header .intro-text .skills {
   }
 }
 section {
+  background: #e20d98;
+  color: white;
   padding: 100px 0;
 }
 section h2 {
