@@ -292,7 +292,6 @@ form .row:first-child .floating-label-form-group {
   border-top: 1px solid #eeeeee;
 }
 footer {
-  font-family: 'Zapfino';
   color: white;
 }
 footer h3 {
@@ -306,6 +305,7 @@ footer .footer-col {
   margin-bottom: 50px;
 }
 footer .footer-below {
+  font-family: 'Zapfino';
   padding: 25px 0;
   background-color: #233140;
 }
