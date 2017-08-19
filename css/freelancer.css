@@ -115,7 +115,7 @@ header .intro-text .skills {
   outline: none;
 }
 .navbar-custom .navbar-brand {
-  color: white;
+  color: #2C3E50;
 }
 .navbar-custom .navbar-brand:hover,
 .navbar-custom .navbar-brand:focus,
@@ -127,7 +127,7 @@ header .intro-text .skills {
   letter-spacing: 1px;
 }
 .navbar-custom .navbar-nav li a {
-  color: white;
+  color: #2C3E50;
 }
 .navbar-custom .navbar-nav li a:hover {
   color: #fffacc;
@@ -180,7 +180,7 @@ header .intro-text .skills {
 }
 section {
   background: #ffb2b2;
-  color: white;
+  color: #2C3E50;
   padding: 100px 0;
 }
 section h2 {
@@ -313,7 +313,7 @@ footer .footer-col {
 footer .footer-below {
   padding: 25px 0;
   background-color: #83eadc;
-  color: white;
+  color: #2C3E50;
 }
 .btn-outline {
   color: black;
