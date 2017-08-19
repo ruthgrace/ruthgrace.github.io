@@ -106,7 +106,7 @@ header .intro-text .skills {
   }
 }
 .navbar-custom {
-  background: #080b0e;
+  background: #83eadc;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 700;
   border: none;
@@ -312,7 +312,7 @@ footer .footer-col {
 }
 footer .footer-below {
   padding: 25px 0;
-  background-color: #080b0e;
+  background-color: #83eadc;
   color: white;
 }
 .btn-outline {
