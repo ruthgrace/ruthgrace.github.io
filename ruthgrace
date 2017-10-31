@@ -33,50 +33,14 @@ server {
 server {
         listen 443 ssl;
 	server_name ruthgracewong.com www.ruthgracewong.com;
-        ssl_certificate /etc/letsencrypt/live/ruthgracewong.com/fullchain.pem;
-        ssl_certificate_key /etc/letsencrypt/live/ruthgracewong.com/privkey.pem;
+        ssl_certificate /etc/letsencrypt/live/www.ruthgracewong.com/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/www.ruthgracewong.com/privkey.pem;
 
         location / {
-            root /var/www/ruthgracewong;
+            root /var/www/ruthgrace;
 	    index index.html;
 	    add_header Vary "User-Agent";
         }
 
-	# pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
-	#
-	#location ~ \.php$ {
-	#	include snippets/fastcgi-php.conf;
-	#
-	#	# With php7.0-cgi alone:
-	#	fastcgi_pass 127.0.0.1:9000;
-	#	# With php7.0-fpm:
-	#	fastcgi_pass unix:/run/php/php7.0-fpm.sock;
-	#}
-
-	# deny access to .htaccess files, if Apache's document root
-	# concurs with nginx's one
-	#
-	#location ~ /\.ht {
-	#	deny all;
-	#}
 }
 
-
-# Virtual Host configuration for example.com
-#
-# You can move that to a different file under sites-available/ and symlink that
-# to sites-enabled/ to enable it.
-#
-#server {
-#	listen 80;
-#	listen [::]:80;
-#
-#	server_name example.com;
-#
-#	root /var/www/example.com;
-#	index index.html;
-#
-#	location / {
-#		try_files $uri $uri/ =404;
-#	}
-#}
