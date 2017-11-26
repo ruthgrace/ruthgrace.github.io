@@ -3,11 +3,14 @@ import os
 import stripe
 from logging.handlers import RotatingFileHandler
 from flask import Flask, render_template, redirect, request, send_from_directory
-from config import testkey, prodkey, testsecretkey, prodsecretkey
+from config import testkey, prodkey, testsecretkey, prodsecretkey, testskus, prodskus
 
 KEY = testkey
 SECRET = testsecretkey
-QUANTITIES = [1, 2,]
+stripe.api_key = SECRET
+COLORS = ["black", "white"]
+COLOR = "white"
+SKUS = testskus
 LOGDIR = '/var/log/ruthgracewong/'
 LOGFILE = 'app.log'
 IPHONE_SHIPPING_COST = 10
@@ -34,22 +37,29 @@ def home():
 
 @app.route('/iphone', methods = ['GET', 'POST'])
 def iphone_shipping():
+    stock = {}
+    for c in COLORS:
+        sku = SKUS[c]
+        stock[c] = stripe.SKU.retrieve(sku)["inventory"]["quantity"]
     if request.method == 'GET':
         numbers = get_numbers(1, IPHONE_SHIPPING_COST)
         return render_template('iphone.html',
                                key=KEY,
-                               quantities=QUANTITIES,
-                               quantity=numbers['quantity'],
+                               colors=COLORS,
+                               color=COLOR,
+                               stock=stock,
                                cost=numbers['cost'],
                                totalcents=numbers['totalcents'],
                                totaldollars=numbers['totaldollars'],
                                stripetotal=numbers['stripetotal'])
     if request.method == 'POST':
-        numbers = get_numbers(int(request.form.get('quantity')), IPHONE_SHIPPING_COST)
+        numbers = get_numbers(1, IPHONE_SHIPPING_COST)
+        color = request.form.get('color')
         return render_template('iphone.html',
                                key=KEY,
-                               quantities=QUANTITIES,
-                               quantity=numbers['quantity'],
+                               colors=COLORS,
+                               color=color,
+                               stock=stock,
                                cost=numbers['cost'],
                                totalcents=numbers['totalcents'],
                                totaldollars=numbers['totaldollars'],
@@ -59,6 +69,7 @@ def iphone_shipping():
 def checkout():
     token = request.form.get('stripeToken')
     amount = request.form.get('stripetotal')
+    color = request.form.get('color')
     stripe.api_key = SECRET
     charge = stripe.Charge.create(
       amount=str(amount),
