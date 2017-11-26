@@ -5,8 +5,8 @@ from logging.handlers import RotatingFileHandler
 from flask import Flask, render_template, redirect, request, send_from_directory
 from config import testkey, prodkey, testsecretkey, prodsecretkey
 
-KEY = prodkey
-SECRET = prodsecretkey
+KEY = testkey
+SECRET = testsecretkey
 QUANTITIES = [1, 2,]
 LOGDIR = '/var/log/ruthgracewong/'
 LOGFILE = 'app.log'
@@ -32,11 +32,11 @@ def get_numbers(quantity, cost):
 def home():
     return render_template('index.html')
 
-@app.route('/ten', methods = ['GET', 'POST'])
-def ten_dollars():
+@app.route('/iphone', methods = ['GET', 'POST'])
+def iphone_shipping():
     if request.method == 'GET':
         numbers = get_numbers(1, IPHONE_SHIPPING_COST)
-        return render_template('ten.html',
+        return render_template('iphone.html',
                                key=KEY,
                                quantities=QUANTITIES,
                                quantity=numbers['quantity'],
@@ -46,7 +46,7 @@ def ten_dollars():
                                stripetotal=numbers['stripetotal'])
     if request.method == 'POST':
         numbers = get_numbers(int(request.form.get('quantity')), IPHONE_SHIPPING_COST)
-        return render_template('ten.html',
+        return render_template('iphone.html',
                                key=KEY,
                                quantities=QUANTITIES,
                                quantity=numbers['quantity'],
