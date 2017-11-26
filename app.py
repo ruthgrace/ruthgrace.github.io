@@ -10,6 +10,7 @@ SECRET = prodsecretkey
 QUANTITIES = [1, 2,]
 LOGDIR = '/var/log/ruthgracewong/'
 LOGFILE = 'app.log'
+IPHONE_SHIPPING_COST = 10
 
 app = Flask(__name__)
 if not os.path.exists(LOGDIR):
@@ -22,11 +23,8 @@ def get_numbers(quantity, cost):
     numbers = {}
     numbers['quantity'] = quantity
     numbers['cost'] = cost * numbers['quantity']
-    numbers['taxtotalcents'] = (85 * numbers['cost']) / 10
-    numbers['taxcents'] = numbers['taxtotalcents'] % 100
-    numbers['taxdollars'] = numbers['taxtotalcents'] / 100
-    numbers['totalcents'] = numbers['taxcents']
-    numbers['totaldollars'] = numbers['taxdollars'] + numbers['cost']
+    numbers['totalcents'] = 0
+    numbers['totaldollars'] = numbers['cost']
     numbers['stripetotal'] = numbers['totaldollars'] * 100 + numbers['totalcents']
     return numbers
 
@@ -37,43 +35,39 @@ def home():
 @app.route('/ten', methods = ['GET', 'POST'])
 def ten_dollars():
     if request.method == 'GET':
-        numbers = get_numbers(1, 10)
+        numbers = get_numbers(1, IPHONE_SHIPPING_COST)
         return render_template('ten.html',
                                key=KEY,
                                quantities=QUANTITIES,
                                quantity=numbers['quantity'],
                                cost=numbers['cost'],
-                               taxcents=numbers['taxcents'],
-                               taxdollars=numbers['taxdollars'],
                                totalcents=numbers['totalcents'],
                                totaldollars=numbers['totaldollars'],
                                stripetotal=numbers['stripetotal'])
     if request.method == 'POST':
-        numbers = get_numbers(int(request.form.get('quantity')), 10)
+        numbers = get_numbers(int(request.form.get('quantity')), IPHONE_SHIPPING_COST)
         return render_template('ten.html',
                                key=KEY,
                                quantities=QUANTITIES,
                                quantity=numbers['quantity'],
                                cost=numbers['cost'],
-                               taxcents=numbers['taxcents'],
-                               taxdollars=numbers['taxdollars'],
                                totalcents=numbers['totalcents'],
                                totaldollars=numbers['totaldollars'],
                                stripetotal=numbers['stripetotal'])
 
-@app.route('/checkout', methods = ['POST'])
+@app.route('/thankyou', methods = ['POST'])
 def checkout():
     token = request.form.get('stripeToken')
     amount = request.form.get('stripetotal')
     stripe.api_key = SECRET
     charge = stripe.Charge.create(
       amount=str(amount),
-      description="Grow Bucket Kit",
+      description="Shipping for iPhone toy",
       currency="usd",
       receipt_email=request.form.get('stripeEmail'),
       source=token
     )
-    return render_template('checkout.html')
+    return render_template('thankyou.html')
 
 @app.route('/donate', methods = ['POST'])
 def donate():
