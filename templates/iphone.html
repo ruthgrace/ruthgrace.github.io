@@ -100,7 +100,8 @@
     <script src="{{ url_for('static', filename='js/freelancer.min.js')}}"></script>
 
     <!-- Stripe payment request -->
-    <script src="https://js.stripe.com/v3/">
+    <script src="https://js.stripe.com/v3/"></script>
+    <script type="text/javascript">
       var stripe = Stripe("{{ key }}");
       var paymentRequest = stripe.paymentRequest({
         country: 'US',
