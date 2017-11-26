@@ -1,2 +1,8 @@
 .DS_Store
 node_modules
+vendor
+config.py
+*.sock
+*.pyc
+templates/*facebook_pixel.html
+.well-known
