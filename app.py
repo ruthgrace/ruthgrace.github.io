@@ -1,4 +1,5 @@
 import logging
+import json
 import os
 import stripe
 from logging.handlers import RotatingFileHandler
@@ -67,17 +68,40 @@ def iphone_shipping():
 
 @app.route('/thankyou', methods = ['POST'])
 def checkout():
-    token = request.form.get('stripeToken')
-    amount = request.form.get('stripetotal')
+    data = request.data
+    app.logger.warn("DATA FROM PAYMENT PAGE: " + str(data))
+    data_dict = json.loads(data)
+    app.logger.warn("JSON DATA FROM PAYMENT PAGE: " + str(data_dict))
     color = request.form.get('color')
+    app.logger.warn("FORM DATA IS: " + str(request.form))
     stripe.api_key = SECRET
-    charge = stripe.Charge.create(
-      amount=str(amount),
-      description="Shipping for iPhone toy",
-      currency="usd",
-      receipt_email=request.form.get('stripeEmail'),
-      source=token
-    )
+#    order = stripe.Order.create(
+#      currency='usd',
+#      items=[
+#        {
+#          "type":'sku',
+#          "parent":'sku_BpwUfKsAWpb6Yc'
+#        }
+#      ],
+#      shipping={
+#        "name":'Aiden Martinez',
+#        "address":{
+#          "line1":'1234 Main Street',
+#          "city":'San Francisco',
+#          "state":'CA',
+#          "country":'US',
+#          "postal_code":'94111'
+#        },
+#      },
+#      email='aiden.martinez@example.com'
+#    )
+#    charge = stripe.Charge.create(
+#      amount=str(amount),
+#      description="Shipping for iPhone toy",
+#      currency="usd",
+#      receipt_email=request.form.get('stripeEmail'),
+#      source=token
+#    )
     return render_template('thankyou.html')
 
 @app.route('/donate', methods = ['POST'])
