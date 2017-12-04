@@ -39,11 +39,17 @@
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
                     <div class="row">
+                        <p id="result" name="result"></p>
+                        <hr>
+                    </div>
+                    <div class="row">
                         <h1>Pay for shipping free iPhone toy</h1>
                         <hr>
                     </div>
                     <div class="row">
                         <form name="quantity" action="iphone" method='POST'>
+                            <label>Email (required for receipt): </label>
+                            <input type="text" name="email" id="email"><br>
                             <label>Color: </label>
                             <select name="color" id="color">
                                 {% for c in colors %}
@@ -139,22 +145,27 @@
       paymentRequest.on('token', function(ev) {
         const token = ev.token;
 	token.color = document.getElementById('color').value;
+        token.email = document.getElementById('email').value;
 
         // Send the token to your server to charge it!
         fetch('/thankyou', {
           method: 'POST',
           body: JSON.stringify({token: token}),
         })
-        .then(function(response) {
+        .then(function(response, dat) {
           if (response.ok) {
             // Report to the browser that the payment was successful, prompting
             // it to close the browser payment interface.
             ev.complete('success');
+	    window.location.href = "thankyou"
           } else {
             // Report to the browser that the payment failed, prompting it to
             // re-show the payment interface, or show an error message and close
             // the payment interface.
             ev.complete('fail');
+	    response.json().then(function(body) {
+		    document.getElementById("result").innerHTML=body.error
+	    })
           }
         });
       });

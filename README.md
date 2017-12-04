@@ -5,6 +5,10 @@ I got the website template from [Start Bootstrap](http://startbootstrap.com/) - 
 ## Install instructions:
 
 ```
+pip install -r requirements.txt
+```
+
+```
 node install
 ```
 

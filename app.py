@@ -2,19 +2,22 @@ import logging
 import json
 import os
 import stripe
+import sys
 from logging.handlers import RotatingFileHandler
-from flask import Flask, render_template, redirect, request, send_from_directory
+from flask import Flask, render_template, redirect, request, send_from_directory, jsonify
+from flask_api import status
 from config import testkey, prodkey, testsecretkey, prodsecretkey, testskus, prodskus
 
-KEY = testkey
-SECRET = testsecretkey
+KEY = prodkey
+SECRET = prodsecretkey
 stripe.api_key = SECRET
 COLORS = ["black", "white"]
 COLOR = "white"
-SKUS = testskus
+SKUS = prodskus
 LOGDIR = '/var/log/ruthgracewong/'
 LOGFILE = 'app.log'
 IPHONE_SHIPPING_COST = 10
+CARD = "card"
 
 app = Flask(__name__)
 if not os.path.exists(LOGDIR):
@@ -66,43 +69,49 @@ def iphone_shipping():
                                totaldollars=numbers['totaldollars'],
                                stripetotal=numbers['stripetotal'])
 
-@app.route('/thankyou', methods = ['POST'])
-def checkout():
-    data = request.data
-    app.logger.warn("DATA FROM PAYMENT PAGE: " + str(data))
-    data_dict = json.loads(data)
-    app.logger.warn("JSON DATA FROM PAYMENT PAGE: " + str(data_dict))
-    color = request.form.get('color')
-    app.logger.warn("FORM DATA IS: " + str(request.form))
-    stripe.api_key = SECRET
-#    order = stripe.Order.create(
-#      currency='usd',
-#      items=[
-#        {
-#          "type":'sku',
-#          "parent":'sku_BpwUfKsAWpb6Yc'
-#        }
-#      ],
-#      shipping={
-#        "name":'Aiden Martinez',
-#        "address":{
-#          "line1":'1234 Main Street',
-#          "city":'San Francisco',
-#          "state":'CA',
-#          "country":'US',
-#          "postal_code":'94111'
-#        },
-#      },
-#      email='aiden.martinez@example.com'
-#    )
-#    charge = stripe.Charge.create(
-#      amount=str(amount),
-#      description="Shipping for iPhone toy",
-#      currency="usd",
-#      receipt_email=request.form.get('stripeEmail'),
-#      source=token
-#    )
-    return render_template('thankyou.html')
+@app.route('/thankyou', methods = ['GET', 'POST'])
+def thankyou():
+    if request.method == 'POST':
+        data = request.data
+        order_data = json.loads(data)['token']
+        try:
+            order = stripe.Order.create(
+              currency='usd',
+              items=[
+                {
+                  "type": 'sku',
+                  "parent": SKUS[order_data['color']]
+                }
+              ],
+              shipping={
+                "name": order_data[CARD]['name'],
+                "address":{
+                  "line1": order_data[CARD]['address_line1'],
+                  "city": order_data[CARD]['address_city'],
+                  "state": order_data[CARD]['address_state'],
+                  "country": order_data[CARD]['address_country'],
+                  "postal_code": order_data[CARD]['address_zip']
+                },
+              },
+              email = order_data['email']
+            )
+            email = order_data['email']
+            del order_data['color']
+            del order_data['email']
+            charge = stripe.Charge.create(
+              amount=str(IPHONE_SHIPPING_COST * 100),
+              description="Shipping for iPhone toy",
+              currency="usd",
+              receipt_email=email,
+              source=order_data['id']
+            )
+            order.pay(source=order_data['id'])
+            return "success"
+        except stripe.error.InvalidRequestError as err:
+            app.logger.warn("INVALID REQUEST ERROR: {0}".format(err))
+            return jsonify({"error": str(err)}), status.HTTP_500_INTERNAL_SERVER_ERROR
+    if request.method == 'GET':
+        return render_template('thankyou.html')
 
 @app.route('/donate', methods = ['POST'])
 def donate():
@@ -114,6 +123,6 @@ def donate():
       description="Donate money to Ruth",
       currency="usd",
       receipt_email=request.form.get('stripeEmail'),
-      source=token
+      source=order_data['id']
     )
     return render_template('donate.html')
