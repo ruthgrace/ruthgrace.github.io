@@ -37,3 +37,5 @@ To renew your SSL cert:
 ```
 certbot certonly --force-renewal -a webroot -w /var/www/ruthgrace -d www.ruthgracewong.com -w /var/www/ruthgrace -d ruthgracewong.com
 ```
+
+to make sure nginx is reloaded after certs are renewed: https://www.guyrutenberg.com/2017/01/01/lets-encrypt-reload-nginx-after-renewing-certificates/
