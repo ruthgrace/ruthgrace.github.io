@@ -93,16 +93,6 @@
             </div>
             <div class="row">
                 <div class="col-sm-4 portfolio-item">
-                    <a href="#growbucket" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="{{ url_for('static', filename='img/portfolio/grow_bucket.jpg')}}" class="img-responsive" alt="">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
                     <a href="#portfolioModalSRE" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
@@ -113,13 +103,25 @@
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
+                    <a href="#portfolioModalManufacturing" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="{{ url_for('static', filename='img/portfolio/grow_bucket.jpg')}}" class="img-responsive"
+                            alt="">
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
                     <a href="#portfolioModalLaser" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="{{ url_for('static', filename='img/portfolio/laser.jpg')}}" class="img-responsive" alt="">
+                        <img src="{{ url_for('static', filename='img/portfolio/laser.jpg')}}" class="img-responsive"
+                            alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
@@ -129,7 +131,8 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="{{ url_for('static', filename='img/portfolio/sewing.jpg')}}" class="img-responsive" alt="">
+                        <img src="{{ url_for('static', filename='img/portfolio/sewing.jpg')}}" class="img-responsive"
+                            alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
@@ -149,7 +152,8 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="{{ url_for('static', filename='img/portfolio/documentation.jpg')}}" class="img-responsive" alt="">
+                        <img src="{{ url_for('static', filename='img/portfolio/documentation.jpg')}}" class="img-responsive"
+                            alt="">
                     </a>
                 </div>
             </div>
@@ -165,7 +169,8 @@
                 </div>
             </div>
             <div class="row">
-                    <p>I am a site reliability engineer by day and maker by night. Also a proud member of the <a href="https://noisebridge.net/wiki/Noisebridge">Noisebridge hackerspace</a>. I try to document my projects on <a href="www.instructables.com/member/ruthgrace/instructables/">Instructables</a></p>
+                <p>I am a site reliability engineer by day and maker by night. Also a proud member of the <a href="https://noisebridge.net/wiki/Noisebridge">Noisebridge
+                        hackerspace</a>. I try to document my projects on <a href="www.instructables.com/member/ruthgrace/instructables/">Instructables</a></p>
             </div>
         </div>
     </section>
@@ -202,13 +207,15 @@
                                 <a href="https://www.facebook.com/ruth.g.wong" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
                             </li>
                             <li>
-                                <a href="https://www.pinterest.com/ruthgracewong/" class="btn-social btn-outline"><i class="fa fa-fw fa-pinterest"></i></a>
+                                <a href="https://www.pinterest.com/ruthgracewong/" class="btn-social btn-outline"><i
+                                        class="fa fa-fw fa-pinterest"></i></a>
                             </li>
                             <li>
                                 <a href="https://medium.com/@ruthgracewong/" class="btn-social btn-outline"><i class="fa fa-fw fa-medium"></i></a>
                             </li>
                             <li>
-                                <a href="https://www.linkedin.com/in/ruthgracewong" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
+                                <a href="https://www.linkedin.com/in/ruthgracewong" class="btn-social btn-outline"><i
+                                        class="fa fa-fw fa-linkedin"></i></a>
                             </li>
                             <li>
                                 <a href="https://github.com/ruthgrace" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
@@ -238,7 +245,8 @@
     </div>
 
     <!-- Portfolio Modals -->
-    <div class="portfolio-modal modal fade" id="growbucket" tabindex="-1" role="dialog" aria-hidden="true" name="growbucket">
+    <div class="portfolio-modal modal fade" id="portfolioModalManufacturing" tabindex="-1" role="dialog" aria-hidden="true"
+        name="portfolioModalManufacturing">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -250,18 +258,25 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2>Grow Bucket Life</h2>
+                            <h2>Manufacturing</h2>
                             <div class="row">
                                 <div class="col-lg-6 col-lg-offset-3">
-                                    <img src="{{ url_for('static', filename='img/portfolio/grow_bucket_peppers.jpg')}}" class="img-responsive img-centered" alt="">
+                                    <img src="{{ url_for('static', filename='img/portfolio/manufacturing.jpg')}}" class="img-responsive img-centered"
+                                        alt="">
                                 </div>
                             </div>
-                            <p><big>I've been working on productionizing a DIY Kit for a Space Bucket style grow bucket.</big></p>
-                            <p>Get a kit on the <strong><a href="http://growbucket.ruthgracewong.com">Grow Bucket Life website</a> </strong></p>
-                            <p><strong><a href="https://medium.com/grow-bucket-life-project-kickstarter-diary">My project diary</a></strong></p>
-                            <p><strong><a href="https://hightech3d.com/product/5-gal-bucket-vinyl-black-kit/?v=7516fd43adaa">My bucket black out kit for sale</a></strong></p>
-                            <p>Thanks to <strong><a href="https://www.spacebuckets.com/">the original DIY space bucket community</a></strong></p>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                            <p><big>I've been working on productionizing a DIY Kit for a Space Bucket style grow
+                                    bucket.</big></p>
+                            <p>Get a kit on the <strong><a href="http://growbucket.ruthgracewong.com">Grow Bucket Life
+                                        website</a> </strong></p>
+                            <p><strong><a href="https://medium.com/grow-bucket-life-project-kickstarter-diary">My
+                                        project diary</a></strong></p>
+                            <p><strong><a href="https://hightech3d.com/product/5-gal-bucket-vinyl-black-kit/?v=7516fd43adaa">My
+                                        bucket black out kit for sale</a></strong></p>
+                            <p>Thanks to <strong><a href="https://www.spacebuckets.com/">the original DIY space bucket
+                                        community</a></strong></p>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i>
+                                Close</button>
                         </div>
                     </div>
                 </div>
@@ -283,18 +298,31 @@
                             <h2>Site Reliability Engineering</h2>
                             <div class="row">
                                 <div class="col-lg-6 col-lg-offset-3">
-                                    <img src="{{ url_for('static', filename='img/portfolio/laptop_me.jpg')}}" class="img-responsive img-centered" alt="">
+                                    <img src="{{ url_for('static', filename='img/portfolio/laptop_me.jpg')}}" class="img-responsive img-centered"
+                                        alt="">
                                 </div>
                             </div>
 
-                            <p><big>For my day job I am a site reliability engineer at Pinterest. My team is responsible for keeping Pinterest up, by building systems, providing reliability consulting for other teams, and dealing with outages as they happen.</big></p>
-                            <p><strong><a href="https://github.com/ruthgrace/ruth_grace_wong_resume/blob/master/Ruth_Wong_Resume.pdf">My resume</a> </strong></p>
-                            <p>I spoke at <strong><a href="https://www.youtube.com/watch?v=smW9VXOdAIg">SaltConf17</a></strong>, <strong><a href="https://ti.to/sf-python/optimize-profile-and-deploy-TensorFlow">SF Python Meetup</a></strong>, and <strong><a href="https://2017.pycon.ca/schedule/2017-11-18">PyCon Canada</a></strong> about a flamegraph profiling web app I made at Pinterest</p>
-                            <p>I coauthored a <strong><a href="https://medium.com/@Pinterest_Engineering/building-a-python-monorepo-for-fast-reliable-development-be763781f67">Pinterest Engineering article</a></strong> about setting up a Python monorepo</p>
-                            <p>I moderated a panel at SREcon17 Americas about <strong><a href="https://www.usenix.org/conference/srecon17americas/program/presentation/training-new-sres">Training New SREs</a></strong></p>
-                            <p>I ran a panel about <strong><a href="https://youtu.be/NjLl819ZVfs?list=PLwp9xeoX5p8NnWYsybl_ZRMtaK7uBr4sN">Logistics at Scale</a></strong> at the San Francisco <strong><a href="https://sf.eaglobal.org">Effective Altruism Global conference</a></strong> 2017</p>
-			    <p>I was featured as a Site Reliability Engineer on <strong><a href="https://www.khanacademy.org/college-careers-more/career-content/career-profile-videos#site-reliability-engineer">Khan Academy's Career Finance Profile</a></strong></p>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                            <p><big>For my day job I am a site reliability engineer at Pinterest. My team is
+                                    responsible for keeping Pinterest up, by building systems, providing reliability
+                                    consulting for other teams, and dealing with outages as they happen.</big></p>
+                            <p><strong><a href="https://github.com/ruthgrace/ruth_grace_wong_resume/blob/master/Ruth_Wong_Resume.pdf">My
+                                        resume</a> </strong></p>
+                            <p>I spoke at <strong><a href="https://www.youtube.com/watch?v=smW9VXOdAIg">SaltConf17</a></strong>,
+                                <strong><a href="https://ti.to/sf-python/optimize-profile-and-deploy-TensorFlow">SF
+                                        Python Meetup</a></strong>, and <strong><a href="https://2017.pycon.ca/schedule/2017-11-18">PyCon
+                                        Canada</a></strong> about a flamegraph profiling web app I made at Pinterest</p>
+                            <p>I coauthored a <strong><a href="https://medium.com/@Pinterest_Engineering/building-a-python-monorepo-for-fast-reliable-development-be763781f67">Pinterest
+                                        Engineering article</a></strong> about setting up a Python monorepo</p>
+                            <p>I moderated a panel at SREcon17 Americas about <strong><a href="https://www.usenix.org/conference/srecon17americas/program/presentation/training-new-sres">Training
+                                        New SREs</a></strong></p>
+                            <p>I ran a panel about <strong><a href="https://youtu.be/NjLl819ZVfs?list=PLwp9xeoX5p8NnWYsybl_ZRMtaK7uBr4sN">Logistics
+                                        at Scale</a></strong> at the San Francisco <strong><a href="https://sf.eaglobal.org">Effective
+                                        Altruism Global conference</a></strong> 2017</p>
+                            <p>I was featured as a Site Reliability Engineer on <strong><a href="https://www.khanacademy.org/college-careers-more/career-content/career-profile-videos#site-reliability-engineer">Khan
+                                        Academy's Career Finance Profile</a></strong></p>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i>
+                                Close</button>
                         </div>
                     </div>
                 </div>
@@ -316,16 +344,24 @@
                             <h2>Laser Cutting</h2>
                             <div class="row">
                                 <div class="col-lg-6 col-lg-offset-3">
-                                    <img src="{{ url_for('static', filename='img/portfolio/imac_fish_tank.jpg')}}" class="img-responsive img-centered" alt="">
+                                    <img src="{{ url_for('static', filename='img/portfolio/imac_fish_tank.jpg')}}"
+                                        class="img-responsive img-centered" alt="">
                                 </div>
                             </div>
-                            <p><big>I use the <a href="">Noisebridge</a> <a href="">Laser Cutter</a> for a lot of projects, and teach laser cutter safety training. I also run a plastic prototyping service, and have prototyped parts for <strong><a href="https://getecoqube.com/">Aqua Design Innovations</a></strong>. Here are some of my favorite projects.</big></p>
+                            <p><big>I use the <a href="">Noisebridge</a> <a href="">Laser Cutter</a> for a lot of
+                                    projects, and teach laser cutter safety training. I also run a plastic prototyping
+                                    service, and have prototyped parts for <strong><a href="https://getecoqube.com/">Aqua
+                                            Design Innovations</a></strong>. Here are some of my favorite projects.</big></p>
                             <p><strong><a href="http://www.instructables.com/id/DIY-IMac-Fish-Tank/">iMac Fish Tank</a></strong></p>
-                            <p><strong><a href="http://www.instructables.com/id/Laser-Cut-Low-Tech-Mood-Tracker/">Low Tech Mood Tracker</a></strong></p>
-                            <p><strong><a href="http://www.instructables.com/id/Personalized-Laser-Cut-Shaving-Stand/">Shaving Stand</a></strong></p>
+                            <p><strong><a href="http://www.instructables.com/id/Laser-Cut-Low-Tech-Mood-Tracker/">Low
+                                        Tech Mood Tracker</a></strong></p>
+                            <p><strong><a href="http://www.instructables.com/id/Personalized-Laser-Cut-Shaving-Stand/">Shaving
+                                        Stand</a></strong></p>
                             <p><strong><a href="http://www.instructables.com/id/Wooden-Magic-Wallet/">Magic Wallet</a></strong></p>
-                            <p><strong><a href="http://www.instructables.com/id/Self-Watering-Root-Pruning-Cloth-Pot/">Self Watering, Root Pruning Cloth Pot</a></strong></p>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                            <p><strong><a href="http://www.instructables.com/id/Self-Watering-Root-Pruning-Cloth-Pot/">Self
+                                        Watering, Root Pruning Cloth Pot</a></strong></p>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i>
+                                Close</button>
                         </div>
                     </div>
                 </div>
@@ -347,16 +383,28 @@
                             <h2>Sewing</h2>
                             <div class="row">
                                 <div class="col-lg-6 col-lg-offset-3">
-                                    <img src="{{ url_for('static', filename='img/portfolio/sweater_plain.jpg')}}" class="img-responsive img-centered" alt="">
+                                    <img src="{{ url_for('static', filename='img/portfolio/sweater_plain.jpg')}}" class="img-responsive img-centered"
+                                        alt="">
                                 </div>
                             </div>
-                            <p><big>I have been taking <a href="http://www.shared-sf.com/2015/10/02/sew-good/">Sew Good</a> sewing lessons with Marilyn at <a href="http://www.shared-sf.com/">SHARED</a>, where I've been learning how to draft and sew my own patterns. My sewing successes include a collaboration with <a href="https://www.betabrand.com">Betabrand</a> for my <a href="https://www.betabrand.com/womens/tops/leave-me-alone-sweater">Leave Me Alone Sweater</a>. I would love to manufacture a sewn product in the future.</big></p>
-                            <p><strong><a href="http://www.instructables.com/id/Leave-Me-Alone-Sweater/">DIY Leave Me Alone Sweater</a></strong></p>
-                            <p><strong><a href="http://www.instructables.com/id/Sew-Your-Own-Carbon-Air-Filter-for-10/">Sewn Carbon Air Filter</a></strong></p>
-                            <p><strong><a href="http://www.instructables.com/id/Self-Watering-Root-Pruning-Cloth-Pot/">Self Watering, Root Pruning Cloth Pot</a></strong></p>
-                            <p><strong><a href="http://www.instructables.com/id/Sew-Your-Own-Pattern-Weights/">One Seam Triangular Pattern Weights</a></strong></p>
-                            <p><strong><a href="http://www.instructables.com/id/Notebook-Cover-With-Zip-Pouch/">Notebook Cover With Zip Pouch</a></strong></p>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                            <p><big>I have been taking <a href="http://www.shared-sf.com/2015/10/02/sew-good/">Sew Good</a>
+                                    sewing lessons with Marilyn at <a href="http://www.shared-sf.com/">SHARED</a>,
+                                    where I've been learning how to draft and sew my own patterns. My sewing successes
+                                    include a collaboration with <a href="https://www.betabrand.com">Betabrand</a> for
+                                    my <a href="https://www.betabrand.com/womens/tops/leave-me-alone-sweater">Leave Me
+                                        Alone Sweater</a>. I would love to manufacture a sewn product in the future.</big></p>
+                            <p><strong><a href="http://www.instructables.com/id/Leave-Me-Alone-Sweater/">DIY Leave Me
+                                        Alone Sweater</a></strong></p>
+                            <p><strong><a href="http://www.instructables.com/id/Sew-Your-Own-Carbon-Air-Filter-for-10/">Sewn
+                                        Carbon Air Filter</a></strong></p>
+                            <p><strong><a href="http://www.instructables.com/id/Self-Watering-Root-Pruning-Cloth-Pot/">Self
+                                        Watering, Root Pruning Cloth Pot</a></strong></p>
+                            <p><strong><a href="http://www.instructables.com/id/Sew-Your-Own-Pattern-Weights/">One Seam
+                                        Triangular Pattern Weights</a></strong></p>
+                            <p><strong><a href="http://www.instructables.com/id/Notebook-Cover-With-Zip-Pouch/">Notebook
+                                        Cover With Zip Pouch</a></strong></p>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i>
+                                Close</button>
                         </div>
                     </div>
                 </div>
@@ -379,47 +427,58 @@
                             <p><big>I like to draw with my brush pen from Daiso. Mostly I draw fishes.</big></p>
                             <div class="row">
                                 <div class="col-lg-4">
-                                    <img src="{{ url_for('static', filename='img/portfolio/art/bokchoy.jpg')}}" class="img-responsive img-centered" alt="">
+                                    <img src="{{ url_for('static', filename='img/portfolio/art/bokchoy.jpg')}}" class="img-responsive img-centered"
+                                        alt="">
                                 </div>
                                 <div class="col-lg-4">
-                                    <img src="{{ url_for('static', filename='img/portfolio/art/goldfish_earrings.jpg')}}" class="img-responsive img-centered" alt="">
+                                    <img src="{{ url_for('static', filename='img/portfolio/art/goldfish_earrings.jpg')}}"
+                                        class="img-responsive img-centered" alt="">
                                 </div>
                                 <div class="col-lg-4">
-                                    <img src="{{ url_for('static', filename='img/portfolio/art/koi_sticker.jpg')}}" class="img-responsive img-centered" alt="">
+                                    <img src="{{ url_for('static', filename='img/portfolio/art/koi_sticker.jpg')}}"
+                                        class="img-responsive img-centered" alt="">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-4">
-                                    <img src="{{ url_for('static', filename='img/portfolio/art/moor_pillow.jpg')}}" class="img-responsive img-centered" alt="">
+                                    <img src="{{ url_for('static', filename='img/portfolio/art/moor_pillow.jpg')}}"
+                                        class="img-responsive img-centered" alt="">
                                 </div>
                                 <div class="col-lg-4">
-                                    <img src="{{ url_for('static', filename='img/portfolio/art/toast.jpg')}}" class="img-responsive img-centered" alt="">
+                                    <img src="{{ url_for('static', filename='img/portfolio/art/toast.jpg')}}" class="img-responsive img-centered"
+                                        alt="">
                                 </div>
                                 <div class="col-lg-4">
-                                    <img src="{{ url_for('static', filename='img/portfolio/art/robin_sculpture.jpg')}}" class="img-responsive img-centered" alt="">
+                                    <img src="{{ url_for('static', filename='img/portfolio/art/robin_sculpture.jpg')}}"
+                                        class="img-responsive img-centered" alt="">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-4">
-                                    <img src="{{ url_for('static', filename='img/portfolio/art/fish_drawing.jpg')}}" class="img-responsive img-centered" alt="">
+                                    <img src="{{ url_for('static', filename='img/portfolio/art/fish_drawing.jpg')}}"
+                                        class="img-responsive img-centered" alt="">
                                 </div>
                                 <div class="col-lg-4">
-                                    <img src="{{ url_for('static', filename='img/portfolio/art/turtle.jpg')}}" class="img-responsive img-centered" alt="">
+                                    <img src="{{ url_for('static', filename='img/portfolio/art/turtle.jpg')}}" class="img-responsive img-centered"
+                                        alt="">
                                 </div>
                                 <div class="col-lg-4">
-                                    <img src="{{ url_for('static', filename='img/portfolio/art/earring_holder.jpg')}}" class="img-responsive img-centered" alt="">
+                                    <img src="{{ url_for('static', filename='img/portfolio/art/earring_holder.jpg')}}"
+                                        class="img-responsive img-centered" alt="">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-4">
-                                    <img src="{{ url_for('static', filename='img/portfolio/art/skateboard.jpg')}}" class="img-responsive img-centered" alt="">
+                                    <img src="{{ url_for('static', filename='img/portfolio/art/skateboard.jpg')}}"
+                                        class="img-responsive img-centered" alt="">
                                 </div>
                                 <div class="col-lg-4">
                                 </div>
                                 <div class="col-lg-4">
                                 </div>
                             </div>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i>
+                                Close</button>
                         </div>
                     </div>
                 </div>
@@ -441,15 +500,26 @@
                             <h2>I Love Documentation</h2>
                             <div class="row">
                                 <div class="col-lg-6 col-lg-offset-3">
-                                    <img src="{{ url_for('static', filename='img/portfolio/documentation.jpg')}}" class="img-responsive img-centered" alt="">
+                                    <img src="{{ url_for('static', filename='img/portfolio/documentation.jpg')}}" class="img-responsive img-centered"
+                                        alt="">
                                 </div>
                             </div>
-                            <p><big>It's important to document your projects, even if they don't go as planned. Project documentation is super easy with a smartphone.</big></p>
-                            <p>I gave a <strong><a href="https://noisebridge.net/wiki/Five_Minutes_of_Fame_2016_12_01">5min talk about project documentation</a></strong> for <strong><a href="https://noisebridge.net/wiki/5mof">5 minutes of fame</a></strong> at <strong><a href="https://noisebridge.net/wiki/Noisebridge">Noisebridge</a></strong></p>
+                            <p><big>It's important to document your projects, even if they don't go as planned. Project
+                                    documentation is super easy with a smartphone.</big></p>
+                            <p>I gave a <strong><a href="https://noisebridge.net/wiki/Five_Minutes_of_Fame_2016_12_01">5min
+                                        talk about project documentation</a></strong> for <strong><a href="https://noisebridge.net/wiki/5mof">5
+                                        minutes of fame</a></strong> at <strong><a href="https://noisebridge.net/wiki/Noisebridge">Noisebridge</a></strong></p>
                             <p>I document how to make my projects on <strong><a href="https://www.instructables.com/member/ruthgrace/instructables/">Instructables</a></strong></p>
-                            <p>I write long form project diaries on <a href="https://medium.com/grow-bucket-life-project-kickstarter-diary">Medium</a>, for example for my <a href="https://medium.com/@ruthgracewong/imac-fish-tank-diary-8e16372d1ca7">iMac Fish Tank</a> and my ongoing <a href="https://medium.com/grow-bucket-life-project-kickstarter-diary">Grow Bucket Life project</a></p>
-                            <p><strong><a href="http://fixitclinic.org">Fixit Clinic</a></strong> provides tools and resources to help people fix their own stuff! I am a Fixit Clinic Coach and live tweet the fixes from <strong><a href="https://twitter.com/ruthgracewong">my own Twitter</a></strong> or the <strong><a href="https://twitter.com/FixitClinic">official Fixit Clinic twitter</a></strong>.</p>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                            <p>I write long form project diaries on <a href="https://medium.com/grow-bucket-life-project-kickstarter-diary">Medium</a>,
+                                for example for my <a href="https://medium.com/@ruthgracewong/imac-fish-tank-diary-8e16372d1ca7">iMac
+                                    Fish Tank</a> and my ongoing <a href="https://medium.com/grow-bucket-life-project-kickstarter-diary">Grow
+                                    Bucket Life project</a></p>
+                            <p><strong><a href="http://fixitclinic.org">Fixit Clinic</a></strong> provides tools and
+                                resources to help people fix their own stuff! I am a Fixit Clinic Coach and live tweet
+                                the fixes from <strong><a href="https://twitter.com/ruthgracewong">my own Twitter</a></strong>
+                                or the <strong><a href="https://twitter.com/FixitClinic">official Fixit Clinic twitter</a></strong>.</p>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i>
+                                Close</button>
                         </div>
                     </div>
                 </div>
