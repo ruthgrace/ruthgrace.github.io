@@ -39,3 +39,10 @@ certbot certonly --force-renewal -a webroot -w /var/www/ruthgrace -d www.ruthgra
 ```
 
 to make sure nginx is reloaded after certs are renewed: https://www.guyrutenberg.com/2017/01/01/lets-encrypt-reload-nginx-after-renewing-certificates/
+
+
+## Restarting the web server on Ruth's box
+
+```
+sudo systemctl restart ruthgracewong
+```
