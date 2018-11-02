@@ -1,126 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Ruth Grace Wong maker portfolio">
-    <meta name="author" content="Ruth Grace Wong">
-
-    <title>Ruth Grace Wong</title>
-
-    <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='img/fish_favicon.png')}}" sizes="32x32">
-
-    <!-- Bootstrap Core CSS -->
-    <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-
-    <!-- Theme CSS -->
-    <link href="{{ url_for('static', filename='css/freelancer.min.css')}}" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="{{ url_for('static', filename='vendor/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-</head>
-
-<body id="page-top" class="index">
-
-    <!-- Navigation -->
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand" href="#page-top">Ruth Grace Wong</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#portfolio">Work</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#about">About</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
-
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <img class="img-responsive" src="{{ url_for('static', filename='img/profile.jpg')}}" alt="">
-                    <div class="intro-text">
-                        <span class="name">Ruth Grace Wong</span>
-                        <span class="skills">Site Reliability Engineer by day, manufacturing engineer by night</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Portfolio Grid Section -->
-    <section id="portfolio">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Work</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModalSRE" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="{{ url_for('static', filename='img/portfolio/sre.jpg')}}" class="img-responsive" alt="">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModalManufacturing" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="{{ url_for('static', filename='img/portfolio/manufacturing.jpg')}}" class="img-responsive"
-                            alt="">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModalDoc" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="{{ url_for('static', filename='img/portfolio/documentation.jpg')}}" class="img-responsive"
+documentation.jpg')}}" class="img-responsive"
                             alt="">
                     </a>
                 </div>
@@ -137,8 +16,8 @@
                 </div>
             </div>
             <div class="row">
-                <p>I am a site reliability engineer by day and maker by night. Also a proud member of the <a href="https://noisebridge.net/wiki/Noisebridge">Noisebridge
-                        hackerspace</a>. I try to document my projects on <a href="www.instructables.com/member/ruthgrace/instructables/">Instructables</a></p>
+                <p>I am a site reliability engineer by day and manufacturing engineer by night. Also a proud member of the <a href="https://noisebridge.net/wiki/Noisebridge">Noisebridge
+                  hackerspace</a>. I write about manufacturing for <a href="https://medium.com/supplyframe-hardware">Supplyframe Hardware</a>.</p>
             </div>
         </div>
     </section>
@@ -237,6 +116,7 @@
                             <p>I spoke about my experience learning Firmware from the Firehose at <strong><a href="https://hackaday.io/superconference">Hackaday Superconference</a></strong>, and you can watch me debug some firmware live at <strong><a href="https://www.youtube.com/watch?v=PKnC8nciWMI">Hardware Developers Didactic Galactic #34</a></strong></p>
                             <p>I occasionally run a workshop with Rik Leipold about <strong><a href="https://www.meetup.com/noisebridge/events/254812336/">manufacturing plastic products out of sheet acrylic</a></strong> for startups to avoid high tooling costs</p>
                             <p>I've written about my experience with <strong><a href="https://medium.com/supplyframe-hardware/engineering-change-orders-manufacture-in-china-like-the-pros-2d30b8e41021">using Engineering Change Orders in China</a></strong> on Medium</p>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i>Close</button>
                         </div>
                     </div>
                 </div>
@@ -438,8 +318,7 @@
                                 <div class="col-lg-4">
                                 </div>
                             </div>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i>
-                                Close</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i>Close</button>
                         </div>
                     </div>
                 </div>
@@ -465,22 +344,14 @@
                                         alt="">
                                 </div>
                             </div>
-                            <p><big>It's important to document your projects, even if they don't go as planned. Project
-                                    documentation is super easy with a smartphone.</big></p>
+                            <p><big>It's important to document your projects and experience, even if things don't go as planned. Documentation is super easy with a smartphone.</big></p>
+                            <p>I document manufacturing stories for Supplyframe Hardware, such as <strong><a href="https://medium.com/supplyframe-hardware/the-incredible-mrs-lin-a-profile-of-a-chinese-manufacturer-and-mother-of-two-5091d570d67d">a profile of a Chinese manufacturer and mother of two</a></strong>, and <strong><a href="https://medium.com/supplyframe-hardware/the-100-000-mistake-ff72a0cdf1a1">a $100,000 manufacturing mistake</a></strong></p>
+                            <p>After documenting my <strong><a href="https://www.instructables.com/id/Leave-Me-Alone-Sweater/">Leave Me Alone Sweater on Instructables</a></strong>, it went viral and I sold some through <strong><a href="https://www.betabrand.com/leave-me-alone-sweater">Betabrand</a></strong> (and promptly spent all the money I made on a failed Kickstarter)</p>
                             <p>I gave a <strong><a href="https://noisebridge.net/wiki/Five_Minutes_of_Fame_2016_12_01">5min
                                         talk about project documentation</a></strong> for <strong><a href="https://noisebridge.net/wiki/5mof">5
                                         minutes of fame</a></strong> at <strong><a href="https://noisebridge.net/wiki/Noisebridge">Noisebridge</a></strong></p>
                             <p>I document how to make my projects on <strong><a href="https://www.instructables.com/member/ruthgrace/instructables/">Instructables</a></strong></p>
-                            <p>I write long form project diaries on <a href="https://medium.com/grow-bucket-life-project-kickstarter-diary">Medium</a>,
-                                for example for my <a href="https://medium.com/@ruthgracewong/imac-fish-tank-diary-8e16372d1ca7">iMac
-                                    Fish Tank</a> and my ongoing <a href="https://medium.com/grow-bucket-life-project-kickstarter-diary">Grow
-                                    Bucket Life project</a></p>
-                            <p><strong><a href="http://fixitclinic.org">Fixit Clinic</a></strong> provides tools and
-                                resources to help people fix their own stuff! I am a Fixit Clinic Coach and live tweet
-                                the fixes from <strong><a href="https://twitter.com/ruthgracewong">my own Twitter</a></strong>
-                                or the <strong><a href="https://twitter.com/FixitClinic">official Fixit Clinic twitter</a></strong>.</p>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i>
-                                Close</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i>Close</button>
                         </div>
                     </div>
                 </div>
