@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Circular Notions</title>
-    <link>https://ruthgrace.github.io/</link>
+    <link>https://circularnotions.com/</link>
     <description>Recent content on Circular Notions</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 12 Sep 2020 00:00:00 -0700</lastBuildDate>
     
-	<atom:link href="https://ruthgrace.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://circularnotions.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>perfectly matching gradient sock yarn</title>
-      <link>https://ruthgrace.github.io/blog/gradient_yarn/</link>
+      <link>https://circularnotions.com/blog/gradient_yarn/</link>
       <pubDate>Sat, 12 Sep 2020 00:00:00 -0700</pubDate>
       
-      <guid>https://ruthgrace.github.io/blog/gradient_yarn/</guid>
+      <guid>https://circularnotions.com/blog/gradient_yarn/</guid>
       <description>I took this photo of two yarn balls starting at the same color in the color gradient to explain to the factory what I wanted, but they are unable to provide yarn to my specifications. The quest continues&amp;hellip;
 Same dye lot is not enough Gradient color yarn is space dyed (dye is dripped onto the yarn by a computerized machine that calculates the color for the gradient sequence), wound onto cones, the ply are twisted together, and the yarn is put on more cones, and then it&amp;rsquo;s wound into balls for retail.</description>
     </item>
     
     <item>
       <title>About me</title>
-      <link>https://ruthgrace.github.io/about/</link>
+      <link>https://circularnotions.com/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ruthgrace.github.io/about/</guid>
+      <guid>https://circularnotions.com/about/</guid>
       <description>Ruth Grace Wong is a manufacturing engineer obsessed with all kinds of knitting machines.</description>
     </item>
     
