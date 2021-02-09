@@ -1,0 +1,14 @@
+[Unit]
+Description=Gunicorn instance to serve Ruth Grace Wong website
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/ruthgrace
+ExecStart=/usr/local/bin/gunicorn --workers 3 --bind unix:ruthgracewong.sock -m 007 wsgi:app
+Restart=on-failure
+RestartSec=42s
+
+[Install]
+WantedBy=multi-user.target
