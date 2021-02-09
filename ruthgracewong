@@ -17,6 +17,18 @@
 # PUT THIS IN /etc/nginx/sites-available and /etc/nginx/sites-enabled
 
 server {
+    if ($host = www.ruthgracewong.com) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    if ($host = ruthgracewong.com) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+
+
 	listen 80;
         listen [::]:80;
 	server_name ruthgracewong.com www.ruthgracewong.com;
@@ -28,13 +40,22 @@ server {
             return 301 https://$host$request_uri;
         }
 
+
+
+
+
+
+
+
+
 }
 
 server {
         listen 443 ssl;
 	server_name ruthgracewong.com www.ruthgracewong.com;
-        ssl_certificate /etc/letsencrypt/live/ruthgracewong.com/fullchain.pem;
-        ssl_certificate_key /etc/letsencrypt/live/ruthgracewong.com/privkey.pem;
+    ssl_certificate /etc/letsencrypt/live/www.growbucket.ruthgracewong.com/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/www.growbucket.ruthgracewong.com/privkey.pem; # managed by Certbot
+
 
         location ~ /static {
             root /var/www/ruthgrace;
@@ -47,6 +68,10 @@ server {
             proxy_set_header X-Forwarded-Proto $scheme;
             proxy_pass http://unix:/var/www/ruthgrace/ruthgracewong.sock;
         }
+
+
+
+
 
 }
 

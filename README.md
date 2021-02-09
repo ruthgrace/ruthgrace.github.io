@@ -9,12 +9,13 @@ pip install -r requirements.txt
 ```
 
 ```
-node install
+npm install
 ```
 
 To compile, run
 
 ```
+cd static
 gulp
 ```
 

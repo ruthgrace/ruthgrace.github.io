@@ -6,14 +6,9 @@ import sys
 from logging.handlers import RotatingFileHandler
 from flask import Flask, render_template, redirect, request, send_from_directory, jsonify
 from flask_api import status
-from config import testkey, prodkey, testsecretkey, prodsecretkey, testskus, prodskus
 
-KEY = prodkey
-SECRET = prodsecretkey
-stripe.api_key = SECRET
 COLORS = ["black", "white"]
 COLOR = "white"
-SKUS = prodskus
 LOGDIR = '/var/log/ruthgracewong/'
 LOGFILE = 'app.log'
 IPHONE_SHIPPING_COST = 10
@@ -38,36 +33,6 @@ def get_numbers(quantity, cost):
 @app.route('/')
 def home():
     return render_template('index.html')
-
-@app.route('/iphone', methods = ['GET', 'POST'])
-def iphone_shipping():
-    stock = {}
-    for c in COLORS:
-        sku = SKUS[c]
-        stock[c] = stripe.SKU.retrieve(sku)["inventory"]["quantity"]
-    if request.method == 'GET':
-        numbers = get_numbers(1, IPHONE_SHIPPING_COST)
-        return render_template('iphone.html',
-                               key=KEY,
-                               colors=COLORS,
-                               color=COLOR,
-                               stock=stock,
-                               cost=numbers['cost'],
-                               totalcents=numbers['totalcents'],
-                               totaldollars=numbers['totaldollars'],
-                               stripetotal=numbers['stripetotal'])
-    if request.method == 'POST':
-        numbers = get_numbers(1, IPHONE_SHIPPING_COST)
-        color = request.form.get('color')
-        return render_template('iphone.html',
-                               key=KEY,
-                               colors=COLORS,
-                               color=color,
-                               stock=stock,
-                               cost=numbers['cost'],
-                               totalcents=numbers['totalcents'],
-                               totaldollars=numbers['totaldollars'],
-                               stripetotal=numbers['stripetotal'])
 
 @app.route('/thankyou', methods = ['GET', 'POST'])
 def thankyou():
@@ -112,17 +77,3 @@ def thankyou():
             return jsonify({"error": str(err)}), status.HTTP_500_INTERNAL_SERVER_ERROR
     if request.method == 'GET':
         return render_template('thankyou.html')
-
-@app.route('/donate', methods = ['POST'])
-def donate():
-    token = request.form.get('stripeToken')
-    amount = request.form.get('stripetotal')
-    stripe.api_key = SECRET
-    charge = stripe.Charge.create(
-      amount=str(amount),
-      description="Donate money to Ruth",
-      currency="usd",
-      receipt_email=request.form.get('stripeEmail'),
-      source=order_data['id']
-    )
-    return render_template('donate.html')
