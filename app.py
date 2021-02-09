@@ -34,6 +34,10 @@ def get_numbers(quantity, cost):
 def home():
     return render_template('index.html')
 
+@app.route('/breathableunderwear')
+def breathable():
+    return render_template('breathableunderwear.html')
+
 @app.route('/thankyou', methods = ['GET', 'POST'])
 def thankyou():
     if request.method == 'POST':
